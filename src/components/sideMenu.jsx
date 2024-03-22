@@ -5,7 +5,7 @@ export const SideMenu = ({ showSideBar, toggleSideBar }) => {
   return (
     <div
       className={clsx(
-        "flex flex-row w-1/5 bg-blue-600  p-10 pl-20 text-white fixed h-full transition-transform duration-300 ease-in-out",
+        "flex flex-row w-1/5 bg-blue-600 x-0 left-0 p-10 pl-20 text-white fixed h-full transition-transform duration-300 ease-in-out",
         {
           "transform translate-x-1000": showSideBar,
           "transform -translate-x-full": !showSideBar,

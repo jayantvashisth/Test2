@@ -14,14 +14,19 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-row w-full">
+    <main className="flex flex-row w-full justify-end">
       <div>
         <SideMenu showSideBar={showSideBar} toggleSideBar={toggleSideBar} />
+        <div
+          className={clsx("flex flex-row transition-all duration-300", {
+            "justify-end": showSideBar,
+            "justify-center": !showSideBar,
+          })}
+        >
+          <DiscussionForum showSideBar={showSideBar} />
+        </div>
       </div>
-      <div className="flex flex-row justify-center w-3/5">
-        <DiscussionForum />
-      </div>
-      <div className="w-1/5">
+      <div className="flex">
         <MarketStories />
       </div>
     </main>
