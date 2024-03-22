@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import React from "react";
 
+// used in sidemenu
 export const SideMenuHeader = ({ icon1, text, icon2 }) => {
   return (
     <div className="flex flex-row justify-between items-center h-[60px] border-b w-full px-3">

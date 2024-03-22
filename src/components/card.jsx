@@ -57,7 +57,7 @@ export const DiscussionCards = () => {
           explicabo necessitatibus praesentium accusamus ullam, animi nulla.
           Harum, esse cumque?
         </div>
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between mt-2">
           <DiscussionCardIcons icon={<FaRegHeart />} tag="2K" />
           <DiscussionCardIcons icon={<FaRegEye />} tag="2K" />
           <DiscussionCardIcons icon={<FaRegComment />} tag="2K Comments" />

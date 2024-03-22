@@ -1,3 +1,5 @@
+// used in duscussion cards
+
 export const DiscussionCardIcons = ({ icon, tag }) => {
   return (
     <div className="flex flex-row gap-1 items-center">

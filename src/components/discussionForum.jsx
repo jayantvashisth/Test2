@@ -10,11 +10,14 @@ export const DiscussionForum = ({ showSideBar }) => {
         "w-4/5": !showSideBar,
       })}
     >
+      {/* discussion forum title */}
       <h2 className="mt-4 mb-8 max-lg:hidden">
-        <span className="text-red-900 bg-yellow-600 px-2 py-2">
+        <span className="text-red-900 bg-yellow-100 px-2 py-2">
           DISCUSSION FORUM
         </span>
       </h2>
+
+      {/* discussion forum cards */}
       <div className="flex flex-col gap-8 w-full">
         {[1, 2, 3, 4, 5, 6].map((ele, ind) => {
           return <DiscussionCards key={ind} />;

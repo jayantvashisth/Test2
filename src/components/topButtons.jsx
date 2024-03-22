@@ -4,6 +4,7 @@ import React from "react";
 export const TopButtons = ({ active, setActive }) => {
   return (
     <div className="flex items-center w-full lg:hidden h-[40px] cursor-pointer">
+      {/* discussion forum button */}
       <div
         className={clsx(
           "w-1/2 flex flex-row items-center justify-center text-white border-r border-red-50 h-full",
@@ -18,6 +19,8 @@ export const TopButtons = ({ active, setActive }) => {
       >
         <span>Discussion Forum</span>
       </div>
+
+      {/* market stories button */}
       <div
         className={clsx(
           "w-1/2 flex flex-row items-center justify-center text-white h-full",

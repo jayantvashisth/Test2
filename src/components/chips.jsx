@@ -1,3 +1,4 @@
+// used in discussion card
 export const SectorChips = ({ text, bg }) => {
   return (
     <div

@@ -23,7 +23,10 @@ export default function Home() {
         className={clsx("flex flex-row w-full justify-center lg:justify-end")}
       >
         <div>
+          {/* side menu column */}
           <SideMenu showSideBar={showSideBar} toggleSideBar={toggleSideBar} />
+
+          {/* discussion forum column */}
           <div
             className={clsx(
               "flex flex-row justify-center transition-all duration-300",
@@ -36,6 +39,8 @@ export default function Home() {
             <DiscussionForum showSideBar={showSideBar} />
           </div>
         </div>
+
+        {/* market stories column */}
         <div
           className={clsx("flex flex-row", {
             "justify-center": active == "market",

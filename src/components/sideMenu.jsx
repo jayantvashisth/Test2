@@ -6,7 +6,7 @@ import {
   FaCaretDown,
   FaCircleUser,
   FaBell,
-  FaCommentDollar
+  FaCommentDollar,
 } from "react-icons/fa6";
 import { SideMenuHeader, SideMenuTabs } from "./sideMenuTabs";
 
@@ -21,6 +21,7 @@ export const SideMenu = ({ showSideBar, toggleSideBar }) => {
         }
       )}
     >
+      {/* side menu buttons */}
       <div className="flex flex-col gap-2 w-full items-start justify-start px-2">
         <SideMenuHeader
           icon1={<FaCircleUser className="h-[30px] w-[30px]" />}
@@ -40,6 +41,8 @@ export const SideMenu = ({ showSideBar, toggleSideBar }) => {
         <SideMenuTabs text={"Events"} />
         <SideMenuTabs text={"News/Interview"} />
       </div>
+
+      {/* used for opening/closing drawer */}
       <button
         onClick={toggleSideBar}
         className="w-[66px] rotate-90 fixed flex items-center justify-center top-1/2 right-[-40px] bg-purple-950"
