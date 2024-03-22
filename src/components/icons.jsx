@@ -1,10 +1,10 @@
-import React from 'react'
-
-export const DiscussionCardIcons = ({icon, tag}) => {
+export const DiscussionCardIcons = ({ icon, tag }) => {
   return (
-    <div className='flex flex-row gap-1 items-center'>
+    <div className="flex flex-row gap-1 items-center">
       {icon}
-      <span className='text-sm font-semibold'>{tag}</span>
+      <span className="text-[10px] sm:text-[12px]  min-[1200]:text-[14px] font-semibold">
+        {tag}
+      </span>
     </div>
-  )
-}
+  );
+};

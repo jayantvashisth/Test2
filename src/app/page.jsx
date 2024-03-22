@@ -2,32 +2,48 @@
 import { DiscussionForum } from "@/components/discussionForum";
 import { MarketStories } from "@/components/marketStories";
 import { SideMenu } from "@/components/sideMenu";
+import { TopButtons } from "@/components/topButtons";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [showSideBar, setShowSideBar] = useState(false);
+  const [active, setActive] = useState("discussion");
 
   const toggleSideBar = () => {
     setShowSideBar(!showSideBar);
   };
 
   return (
-    <main className="flex flex-row w-full justify-end">
-      <div>
-        <SideMenu showSideBar={showSideBar} toggleSideBar={toggleSideBar} />
+    <main className="flex flex-col">
+      <TopButtons active={active} setActive={setActive} />
+
+      <div
+        className={clsx("flex flex-row w-full justify-center lg:justify-end")}
+      >
+        <div>
+          <SideMenu showSideBar={showSideBar} toggleSideBar={toggleSideBar} />
+          <div
+            className={clsx(
+              "flex flex-row justify-center transition-all duration-300",
+              {
+                "lg:justify-end ": showSideBar,
+                "hidden lg:flex": active != "discussion",
+              }
+            )}
+          >
+            <DiscussionForum showSideBar={showSideBar} />
+          </div>
+        </div>
         <div
-          className={clsx("flex flex-row transition-all duration-300", {
-            "justify-end": showSideBar,
-            "justify-center": !showSideBar,
+          className={clsx("flex flex-row", {
+            "justify-center": active == "market",
+            "hidden lg:flex": active != "market",
           })}
         >
-          <DiscussionForum showSideBar={showSideBar} />
+          <MarketStories showSideBar={showSideBar} />
         </div>
-      </div>
-      <div className="flex">
-        <MarketStories />
       </div>
     </main>
   );

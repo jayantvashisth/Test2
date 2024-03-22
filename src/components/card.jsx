@@ -9,10 +9,16 @@ import {
 } from "react-icons/fa6";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { DiscussionCardIcons } from "./icons";
+import clsx from "clsx";
 
-export const StoriesCard = () => {
+export const StoriesCard = ({ showSideBar }) => {
   return (
-    <div className="flex flex-col w-[330px]">
+    <div
+      className={clsx("flex flex-col w-4/5 transition-all duration-300", {
+        "lg:w-[280px] max-[1200]:w-[300px] xl:w-[330px]": showSideBar,
+        "lg:w-[330px] xl:w-[370px]": !showSideBar,
+      })}
+    >
       <Image
         src="https://techographics.com/wp-content/uploads/2023/12/11-phone-wallpaper-vaporwave.jpg"
         alt="card-image"
@@ -23,7 +29,7 @@ export const StoriesCard = () => {
       />
       <div className="flex flex-col p-3 border bottom-1">
         <span className="font-bold">The Coldest Sunset</span>
-        <p className="content">
+        <p className="sm:text-[12px] min-[1200]:text-[14px] xl:text-[14px]">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint neque
           vitae ullam doloribus nemo nihil recusandae animi non voluptatibus
           ipsa.
@@ -35,22 +41,21 @@ export const StoriesCard = () => {
 
 export const DiscussionCards = () => {
   return (
-    <div className="flex flex-row border border-gray-100 gap-4 pl-5 pr-2 py-3 w-full">
+    <div className="relative flex flex-row border border-gray-100 gap-2 md:gap-4 pl-2 md:pl-5 pr-2 py-3 w-full">
       <div>
-        <FaCircleUser className="w-[30px] h-[30px]" />
+        <FaCircleUser className="w-[20px] md:w-[30px] h-[20px] md:h-[30px]" />
       </div>
       <div className="flex flex-col">
         <div className="flex flex-row w-full justify-between">
-          <div className="flex flex-row items-center gap-5">
+          <div className="flex flex-row items-center gap-2 md:gap-5">
             <span className="font-bold">Lorem Ipsum</span>
-            <SectorChips text={"Sector 2"} bg={"bg-blue-400"} />
+            <SectorChips text={"Sector 2"} bg={"bg-purple-950"} />
           </div>
         </div>
-        <div className="card-content">
+        <div className="text-[10px] sm:text-[12px]  min-[1200]:text-[14px] xl:text-[14px]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod atque
           explicabo necessitatibus praesentium accusamus ullam, animi nulla.
-          Harum, esse cumque? Doloremque incidunt amet pariatur necessitatibus
-          ab repellendus ut commodi dignissimos?
+          Harum, esse cumque?
         </div>
         <div className="flex flex-row justify-between">
           <DiscussionCardIcons icon={<FaRegHeart />} tag="2K" />
@@ -59,7 +64,7 @@ export const DiscussionCards = () => {
           <DiscussionCardIcons icon={<AiOutlineShareAlt />} tag="Share" />
         </div>
       </div>
-      <span className="flex text-nowrap text-[12px] text-blue-800 font-medium">
+      <span className="max-[500px]:absolute max-[500px]:right-2 md:flex text-nowrap text-[12px] text-blue-800 font-medium">
         2 Mins Ago
       </span>
     </div>

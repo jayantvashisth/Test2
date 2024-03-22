@@ -5,12 +5,12 @@ import clsx from "clsx";
 export const DiscussionForum = ({ showSideBar }) => {
   return (
     <div
-      className={clsx("flex flex-col transition-all duration-300", {
-        "w-[70%]": showSideBar,
+      className={clsx("flex flex-col transition-all duration-300 max-lg:pt-5", {
+        "w-4/5 xl:w-[70%] lg:w-[62%] ": showSideBar,
         "w-4/5": !showSideBar,
       })}
     >
-      <h2 className="mt-4 mb-8">
+      <h2 className="mt-4 mb-8 max-lg:hidden">
         <span className="text-red-900 bg-yellow-600 px-2 py-2">
           DISCUSSION FORUM
         </span>
